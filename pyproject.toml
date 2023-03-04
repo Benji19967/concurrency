@@ -8,6 +8,7 @@ authors = [ "Benjamin Labrecque" ]
 python = "^3.8"
 typer = "^0.7.0"
 trio = "^0.22.0"
+httpx = "^0.23.3"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
