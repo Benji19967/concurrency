@@ -4,7 +4,7 @@ Getting results from a long async task
 Examples from the web:
 
 - https://github.com/megadose/holehe/blob/0f53de6e98419dbea24c187a93c897ad7fbbb68c/holehe/core.py#L213
-- 
+- https://github.com/srush/MiniChain/blob/a29fbb3bc0311f6c4c98ffd19d26f4d6a5e1e76d/minichain/base.py#L165
 """
 
 import time
@@ -24,8 +24,6 @@ async def main():
     """
     Order of results is not guaranteed to be the same for every run
     """
-
-
     print("Starting main")
     start = time.time()
 
