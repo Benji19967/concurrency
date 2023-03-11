@@ -13,6 +13,12 @@ class Message(BaseModel):
 async def dummy():
     print("Dummy")
 
+async def long_task(task_id: int):
+    print(f"Starting long task {task_id}")
+    await trio.sleep(1)
+    print(f"Done long task {task_id}")
+    return f"Long task result {task_id}"
+
 async def main():
     print("Starting main")
     start = time.time()
@@ -46,10 +52,15 @@ async def producer(send_channel):
 
 async def consumer(receive_channel):
     print("Starting consumer")
+    messages = []
     async with receive_channel:
         async for message in receive_channel:
             print("Consumer: ", id(message))
             print(f"Message index: {message.index}")
+            await long_task(task_id=message.index)
+            messages.append(message)
+    print("Returning messages")
+    return messages
 
 
 trio.run(main)
