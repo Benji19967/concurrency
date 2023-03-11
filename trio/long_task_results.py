@@ -1,27 +1,31 @@
 """
-Trio provies open_memory_channel() to communicate, which
-acts similar to queue.Queue()
+Getting results from a long async task
+
+Examples from the web:
+
+- https://github.com/megadose/holehe/blob/0f53de6e98419dbea24c187a93c897ad7fbbb68c/holehe/core.py#L213
+- 
 """
 
 import time
 from typing import List
-from unittest import result
 import trio
-from pydantic import BaseModel
-
-class Message(BaseModel):
-    index: int
 
 
 async def long_task(task_id: int, results: List[str]):
     print(f"Starting long task {task_id}")
-    await trio.sleep(task_id)
+    await trio.sleep(2)
     print(f"Done long task {task_id}")
     result = f"Long task result {task_id}"
     results.append(result)
     return result
 
 async def main():
+    """
+    Order of results is not guaranteed to be the same for every run
+    """
+
+
     print("Starting main")
     start = time.time()
 
