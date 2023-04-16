@@ -11,8 +11,8 @@ import time
 from typing import List
 import trio
 
-
 async def long_task(task_id: int, results: List[str]):
+
     print(f"Starting long task {task_id}")
     await trio.sleep(2)
     print(f"Done long task {task_id}")
