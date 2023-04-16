@@ -6,5 +6,6 @@ Mainly testing `Trio`
 
 ```bash
 make develop
+source env/bin/activate
 pre-commit install
 ```
