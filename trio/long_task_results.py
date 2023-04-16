@@ -20,6 +20,7 @@ async def long_task(task_id: int, results: List[str]):
     results.append(result)
     return result
 
+
 async def main():
     """
     Order of results is not guaranteed to be the same for every run
@@ -33,5 +34,6 @@ async def main():
             nursery.start_soon(long_task, i, results)
     print(time.time() - start)
     print(results)
+
 
 trio.run(main)

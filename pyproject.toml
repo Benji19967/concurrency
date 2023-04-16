@@ -19,7 +19,7 @@ black = "^23.1.0"
 pytest = "^7.2.1"
 
 [tool.mypy]
-files = "testing"
+files = "trio"
 strict = true
 namespace_packages = true
 explicit_package_bases = true

@@ -1,5 +1,6 @@
 import trio
 
+
 async def double_sleep(x):
     print("HEY!")
     await trio.sleep(2 * x)

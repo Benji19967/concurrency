@@ -7,17 +7,21 @@ import time
 import trio
 from pydantic import BaseModel
 
+
 class Message(BaseModel):
     index: int
 
+
 async def dummy():
     print("Dummy")
+
 
 async def long_task(task_id: int):
     print(f"Starting long task {task_id}")
     await trio.sleep(1)
     print(f"Done long task {task_id}")
     return f"Long task result {task_id}"
+
 
 async def main():
     print("Starting main")
