@@ -17,6 +17,7 @@ black = "^23.1.0"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.2.1"
+pre-commit = "^3.2.2"
 
 [tool.mypy]
 files = "trio"
