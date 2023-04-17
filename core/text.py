@@ -10,6 +10,10 @@ async def split_text(text: str) -> List[str]:
 
 
 class Text(BaseModel):
+    """
+    A text can have many paragraphs
+    """
+
     index: int
     input_text: str
     paragraphs: Optional[List[str]] = None
